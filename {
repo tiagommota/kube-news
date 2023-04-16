@@ -173,4 +173,214 @@ See 'snap info <snapname>' for additional versions.
 kubernetes   ClusterIP      10.245.0.1      <none>            443/TCP        9h
 postgre      ClusterIP      10.245.76.147   <none>            5432/TCP       80m
 web          LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   80m
-[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get services[2Pctl get servicesectl describe pod web-8d6d889f6-kwtjx get pod[Kservicesdescribe pod web-b5cf776b-ptd8j get pod[K[10Pclearkubectl delete cluster meucluster[K?get nodes[K[K[K[K[Kpod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          85m
+web-5c4f69fdb7-dk9tz       1/1     Running       0          18s
+web-5c4f69fdb7-lrcxl       1/1     Running       0          20s
+web-8d6d889f6-kwtjx        1/1     Terminating   0          6m33s
+web-8d6d889f6-vz7hf        1/1     Terminating   0          6m30s
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS    RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running   0          94m
+web-5c4f69fdb7-dk9tz       1/1     Running   0          9m59s
+web-5c4f69fdb7-lrcxl       1/1     Running   0          10m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          96m
+web-5bf5cf4cf4-59kft       1/1     Running       0          16s
+web-5bf5cf4cf4-5swtf       1/1     Running       0          14s
+web-5c4f69fdb7-dk9tz       1/1     Terminating   0          11m
+web-5c4f69fdb7-lrcxl       1/1     Terminating   0          11m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl apply -f ./monitoramento/deploy-prometheus-grafana 
+[?2004lUnable to connect to the server: dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pods
+[?2004lE0416 12:27:18.839511   88868 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+E0416 12:27:31.126719   88868 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+E0416 12:27:43.415911   88868 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+E0416 12:27:55.703027   88868 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+E0416 12:28:07.991605   88868 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+Unable to connect to the server: dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pods
+[?2004lE0416 12:30:20.119703   89369 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+E0416 12:30:32.407139   89369 memcache.go:265] couldn't get current server API group list: Get "https://f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com/api?timeout=32s": dial tcp: lookup f5e938d3-9b67-47ac-b518-b6f6e9a206a1.k8s.ondigitalocean.com on 127.0.0.53:53: server misbehaving
+^C
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ ping 8.8.8.8
+[?2004lPING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+From 192.168.1.143 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=3 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=4 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=5 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=6 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=7 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=8 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=9 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=10 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=11 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=12 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=13 Destination Host Unreachable
+From 192.168.1.143 icmp_seq=14 Destination Host Unreachable
+^C
+--- 8.8.8.8 ping statistics ---
+17 packets transmitted, 0 received, +14 errors, 100% packet loss, time 16205ms
+pipe 3
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ ping 8.8.8.8
+[?2004lPING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=128 time=203 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=128 time=164 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=128 time=158 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=128 time=164 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=128 time=162 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=128 time=153 ms
+^C
+--- 8.8.8.8 ping statistics ---
+9 packets transmitted, 6 received, 33.3333% packet loss, time 8063ms
+rtt min/avg/max/mdev = 153.236/167.483/203.493/16.556 ms
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ ping 8.8.8.8kubectl get pods
+[?2004lNAME                       READY   STATUS    RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running   0          9h
+web-5bf5cf4cf4-59kft       1/1     Running   0          8h
+web-5bf5cf4cf4-5swtf       1/1     Running   0          8h
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pods[4Pping 8.8.8.8kubectl get podsapply -f ./monitoramento/deploy-prometheus-grafana 
+[?2004lserviceaccount/prometheus-kube-state-metrics created
+serviceaccount/prometheus-node-exporter created
+serviceaccount/prometheus-server created
+configmap/prometheus-server created
+clusterrole.rbac.authorization.k8s.io/prometheus-kube-state-metrics created
+clusterrole.rbac.authorization.k8s.io/prometheus-server created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-kube-state-metrics created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-server created
+service/prometheus-kube-state-metrics created
+service/prometheus-node-exporter created
+service/prometheus-server created
+daemonset.apps/prometheus-node-exporter created
+deployment.apps/prometheus-kube-state-metrics created
+deployment.apps/prometheus-server created
+serviceaccount/grafana-test created
+configmap/grafana-test created
+role.rbac.authorization.k8s.io/grafana-test created
+rolebinding.rbac.authorization.k8s.io/grafana-test created
+serviceaccount/grafana created
+secret/grafana created
+configmap/grafana created
+clusterrole.rbac.authorization.k8s.io/grafana-clusterrole created
+clusterrolebinding.rbac.authorization.k8s.io/grafana-clusterrolebinding created
+role.rbac.authorization.k8s.io/grafana created
+rolebinding.rbac.authorization.k8s.io/grafana created
+service/grafana created
+deployment.apps/grafana created
+[resource mapping not found for name: "grafana-test" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first, resource mapping not found for name: "grafana" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first]
+Error from server (BadRequest): error when creating "./monitoramento/deploy-prometheus-grafana": Pod in version "v1" cannot be handled as a Pod: strict decoding error: unknown field "MANIFEST"
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl apply -f ./monitoramento/deploy-prometheus-grafana get pods[K
+[?2004lNAME                                             READY   STATUS    RESTARTS   AGE
+grafana-665ccb7577-sn8gc                         1/1     Running   0          26s
+postgre-57cd746467-g4d5t                         1/1     Running   0          9h
+prometheus-kube-state-metrics-5dbbf757f5-svdqp   1/1     Running   0          42s
+prometheus-node-exporter-4h5rm                   1/1     Running   0          43s
+prometheus-node-exporter-rhx8p                   1/1     Running   0          43s
+prometheus-server-7cd58c49bf-8flnm               2/2     Running   0          41s
+web-5bf5cf4cf4-59kft                             1/1     Running   0          8h
+web-5bf5cf4cf4-5swtf                             1/1     Running   0          8h
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get podsapply -f ./monitoramento/deploy-prometheus-grafana 
+[?2004lserviceaccount/prometheus-kube-state-metrics configured
+serviceaccount/prometheus-node-exporter unchanged
+serviceaccount/prometheus-server unchanged
+configmap/prometheus-server unchanged
+clusterrole.rbac.authorization.k8s.io/prometheus-kube-state-metrics unchanged
+clusterrole.rbac.authorization.k8s.io/prometheus-server unchanged
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-kube-state-metrics unchanged
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-server unchanged
+service/prometheus-kube-state-metrics unchanged
+service/prometheus-node-exporter unchanged
+service/prometheus-server unchanged
+daemonset.apps/prometheus-node-exporter unchanged
+deployment.apps/prometheus-kube-state-metrics configured
+deployment.apps/prometheus-server configured
+serviceaccount/grafana-test unchanged
+configmap/grafana-test unchanged
+role.rbac.authorization.k8s.io/grafana-test unchanged
+rolebinding.rbac.authorization.k8s.io/grafana-test unchanged
+serviceaccount/grafana unchanged
+secret/grafana unchanged
+configmap/grafana unchanged
+clusterrole.rbac.authorization.k8s.io/grafana-clusterrole configured
+clusterrolebinding.rbac.authorization.k8s.io/grafana-clusterrolebinding unchanged
+role.rbac.authorization.k8s.io/grafana unchanged
+rolebinding.rbac.authorization.k8s.io/grafana unchanged
+service/grafana unchanged
+deployment.apps/grafana configured
+[resource mapping not found for name: "grafana-test" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first, resource mapping not found for name: "grafana" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first]
+Error from server (BadRequest): error when creating "./monitoramento/deploy-prometheus-grafana": Pod in version "v1" cannot be handled as a Pod: strict decoding error: unknown field "MANIFEST"
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl apply -f ./monitoramento/deploy-prometheus-grafana get pods[K
+[?2004lNAME                                             READY   STATUS    RESTARTS   AGE
+grafana-665ccb7577-sn8gc                         1/1     Running   0          2m2s
+postgre-57cd746467-g4d5t                         1/1     Running   0          9h
+prometheus-kube-state-metrics-5dbbf757f5-svdqp   1/1     Running   0          2m18s
+prometheus-node-exporter-4h5rm                   1/1     Running   0          2m19s
+prometheus-node-exporter-rhx8p                   1/1     Running   0          2m19s
+prometheus-server-7cd58c49bf-8flnm               2/2     Running   0          2m17s
+web-5bf5cf4cf4-59kft                             1/1     Running   0          8h
+web-5bf5cf4cf4-5swtf                             1/1     Running   0          8h
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get podsapply -f ./monitoramento/deploy-prometheus-grafana 
+[?2004lserviceaccount/prometheus-kube-state-metrics configured
+serviceaccount/prometheus-node-exporter unchanged
+serviceaccount/prometheus-server unchanged
+configmap/prometheus-server unchanged
+clusterrole.rbac.authorization.k8s.io/prometheus-kube-state-metrics unchanged
+clusterrole.rbac.authorization.k8s.io/prometheus-server unchanged
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-kube-state-metrics unchanged
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-server unchanged
+service/prometheus-kube-state-metrics unchanged
+service/prometheus-node-exporter unchanged
+service/prometheus-server unchanged
+daemonset.apps/prometheus-node-exporter unchanged
+deployment.apps/prometheus-kube-state-metrics configured
+deployment.apps/prometheus-server configured
+serviceaccount/grafana-test unchanged
+configmap/grafana-test unchanged
+role.rbac.authorization.k8s.io/grafana-test unchanged
+rolebinding.rbac.authorization.k8s.io/grafana-test unchanged
+serviceaccount/grafana unchanged
+secret/grafana unchanged
+configmap/grafana unchanged
+clusterrole.rbac.authorization.k8s.io/grafana-clusterrole configured
+clusterrolebinding.rbac.authorization.k8s.io/grafana-clusterrolebinding unchanged
+role.rbac.authorization.k8s.io/grafana unchanged
+rolebinding.rbac.authorization.k8s.io/grafana unchanged
+service/grafana unchanged
+deployment.apps/grafana configured
+[resource mapping not found for name: "grafana-test" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first, resource mapping not found for name: "grafana" namespace: "" from "./monitoramento/deploy-prometheus-grafana": no matches for kind "PodSecurityPolicy" in version "policy/v1beta1"
+ensure CRDs are installed first]
+Error from server (BadRequest): error when creating "./monitoramento/deploy-prometheus-grafana": Pod in version "v1" cannot be handled as a Pod: strict decoding error: unknown field "MANIFEST"
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get output
+[?2004lerror: the server doesn't have a resource type "output"
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get output[K[K[K[K[K[Kservices
+[?2004lNAME                            TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)        AGE
+grafana                         LoadBalancer   10.245.42.171   <pending>         80:32440/TCP   3m17s
+kubernetes                      ClusterIP      10.245.0.1      <none>            443/TCP        17h
+postgre                         ClusterIP      10.245.76.147   <none>            5432/TCP       9h
+prometheus-kube-state-metrics   ClusterIP      10.245.38.59    <none>            8080/TCP       3m37s
+prometheus-node-exporter        ClusterIP      10.245.143.77   <none>            9100/TCP       3m35s
+prometheus-server               LoadBalancer   10.245.95.74    <pending>         80:30787/TCP   3m34s
+web                             LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   9h
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get services
+[?2004lNAME                            TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)        AGE
+grafana                         LoadBalancer   10.245.42.171   <pending>         80:32440/TCP   3m36s
+kubernetes                      ClusterIP      10.245.0.1      <none>            443/TCP        17h
+postgre                         ClusterIP      10.245.76.147   <none>            5432/TCP       9h
+prometheus-kube-state-metrics   ClusterIP      10.245.38.59    <none>            8080/TCP       3m56s
+prometheus-node-exporter        ClusterIP      10.245.143.77   <none>            9100/TCP       3m54s
+prometheus-server               LoadBalancer   10.245.95.74    <pending>         80:30787/TCP   3m53s
+web                             LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   9h
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get services[2Poutputclear[Kkubectl apply -f ./monitoramento/deploy-prometheus-grafana get pods[Kapply -f ./monitoramento/deploy-prometheus-grafana get pods[Kapply -f ./monitoramento/deploy-prometheus-grafana get pods[Kapply -f ./monitoramento/deploy-prometheus-grafana get pods[Kapply -f ./monitoramento/deploy-prometheus-grafana get pods[K[4Pping 8.8.8.8kubectl get podsapply -f ./monitoramento/deploy-prometheus-grafana get pod[Kservices[2Pctl get servicesectl describe pod web-8d6d889f6-kwtjx get pod[Kservicesdescribe pod web-b5cf776b-ptd8j get pod[K[10Pclearkubectl delete cluster meucluster[Kdelete cluster meucluster[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit add .
+[?2004l[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ git commit -m
+[?2004lerror: switch `m' requires a value
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ git commit -m[4Padd .kubectl get services[2Poutputclear[Kkubectl apply -f ./monitoramento/deploy-prometheus-grafana get pods[Kapply -f ./monitoramento/deploy-prometheu
