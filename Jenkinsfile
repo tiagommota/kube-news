@@ -8,8 +8,8 @@ pipeline {
                     dockerapp = docker.build("tiagommota/kube-news:${env.BUILD_ID}" , "--file ./src/dockerfile ./src")
                 }
             }
-        }
-    }
+        
+    
 
     stages {
         stage("Push Docker Image") {
@@ -22,4 +22,6 @@ pipeline {
             }
         }
     }
+}
+}
 }
