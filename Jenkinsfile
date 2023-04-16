@@ -26,7 +26,7 @@ pipeline {
 
             steps {
 
-                withkubeConfig ([credentialsid: 'kube_config']) {
+                withKubeConfig ([credentialsid: 'kube_config']) {
                     sh 'kubectl apply -f ./k8s/deployment.yaml'                 
                 }
 
