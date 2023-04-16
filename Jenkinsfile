@@ -5,7 +5,7 @@ pipeline {
         stage("Build Docker Image") {
             steps {
                 script {
-                    dockerapp = docker.build("tiagommota/kube-news:${env.BUILD_ID}" , "-file ./Dockerfile ./src")
+                    dockerapp = docker.build("tiagommota/kube-news:${env.BUILD_ID}" , "-f ./dockerfile ./src")
                 }
             }
         }
