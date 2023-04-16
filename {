@@ -69,4 +69,108 @@ Events:                      <none>
 kubernetes   ClusterIP      10.245.0.1      <none>            443/TCP        8h
 postgre      ClusterIP      10.245.76.147   <none>            5432/TCP       74m
 web          LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   74m
-[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ub
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get servicesdescribe pod web-b5cf776b-ptd8j get pod[K[10Pclearkubectl delete cluster meuclusterclear[Kkubectl get poddescribe pod web-b5cf776b-ptd8j get pod[K[10Pclearkubectl delete cluster meucluster[K?get nodesapi-resources[2Pdocker container ls[3Pkubectl get podsapply -f deployment.yaml [18Pping google.com[3P8.8.8.8google.comkubectl apply -f deployment.yaml get pods[Kdocker container lskubectl api-resources[4Pget nodes?[K[Kdelete cluster meuclusterclear[Kkubectl get poddescribe pod web-b5cf776b-ptd8j [20Pget services[Kkubectl get servicesdescribe pod web-b5cf776b-ptd8j get pod[K[10Pclearkubectl delete cluster meucluster[K?get nodesapi-resources[2Pdocker container lskubectl api-resources[4Pget nodes?[K[Kdelete cluster meuclusterclear[Kkubectl get pod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          78m
+web-8d6d889f6-kwtjx        1/1     Running       0          21s
+web-8d6d889f6-vz7hf        1/1     Running       0          18s
+web-b5cf776b-ptd8j         1/1     Terminating   0          78m
+web-b5cf776b-rqsq5         1/1     Terminating   0          78m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          79m
+web-8d6d889f6-kwtjx        1/1     Running       0          28s
+web-8d6d889f6-vz7hf        1/1     Running       0          25s
+web-b5cf776b-ptd8j         1/1     Terminating   0          78m
+web-b5cf776b-rqsq5         1/1     Terminating   0          78m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          79m
+web-8d6d889f6-kwtjx        1/1     Running       0          32s
+web-8d6d889f6-vz7hf        1/1     Running       0          29s
+web-b5cf776b-ptd8j         1/1     Terminating   0          79m
+web-b5cf776b-rqsq5         1/1     Terminating   0          79m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS        RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running       0          79m
+web-8d6d889f6-kwtjx        1/1     Running       0          36s
+web-8d6d889f6-vz7hf        1/1     Running       0          33s
+web-b5cf776b-rqsq5         1/1     Terminating   0          79m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod
+[?2004lNAME                       READY   STATUS    RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running   0          79m
+web-8d6d889f6-kwtjx        1/1     Running   0          38s
+web-8d6d889f6-vz7hf        1/1     Running   0          35s
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get pod[K[K[K[K[K[K[Kdescribe pod [7mweb-8d6d889f6-kwtjx [27mweb-8d6d889f6-kwtjx 
+[?2004lName:             web-8d6d889f6-kwtjx
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             default-fnnsl/10.116.0.3
+Start Time:       Sun, 16 Apr 2023 04:05:05 +0100
+Labels:           app=web
+                  pod-template-hash=8d6d889f6
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.149
+IPs:
+  IP:           10.244.0.149
+Controlled By:  ReplicaSet/web-8d6d889f6
+Containers:
+  web:
+    Container ID:   containerd://35d03c998ef17b10e2fa400244c2e17a0c8b27e15b9cdce503b504fbfd231fed
+    Image:          tiagommota/kube-news:45
+    Image ID:       docker.io/tiagommota/kube-news@sha256:704386ae3bc197d68ba85a16b37ed76028cba8dd948301548c533c6e26d24b61
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 16 Apr 2023 04:05:08 +0100
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      DB_DATABASE:  kubenews
+      DB_USERNAME:  kubenews
+      DB_PASSWORD:  Pg#123
+      DB_HOST:      postgre
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-sxmwn (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-sxmwn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  65s   default-scheduler  Successfully assigned default/web-8d6d889f6-kwtjx to default-fnnsl
+  Normal  Pulling    65s   kubelet            Pulling image "tiagommota/kube-news:45"
+  Normal  Pulled     64s   kubelet            Successfully pulled image "tiagommota/kube-news:45" in 1.910002736s (1.910014137s including waiting)
+  Normal  Created    63s   kubelet            Created container web
+  Normal  Started    63s   kubelet            Started container web
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ get[K[K[Kkubctl get services
+[?2004lCommand 'kubctl' not found, did you mean:
+  command 'kubectl' from snap kubectl (1.26.4)
+See 'snap info <snapname>' for additional versions.
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubctl get services[K
+[?2004lCommand 'kubctl' not found, did you mean:
+  command 'kubectl' from snap kubectl (1.26.4)
+See 'snap info <snapname>' for additional versions.
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubctl get services[1@e
+[?2004lNAME         TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)        AGE
+kubernetes   ClusterIP      10.245.0.1      <none>            443/TCP        9h
+postgre      ClusterIP      10.245.76.147   <none>            5432/TCP       80m
+web          LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   80m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
