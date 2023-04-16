@@ -11,7 +11,7 @@ pipeline {
         }
     }
 
-    tages {
+    stages {
         stage("Push Docker Image") {
             steps {
                 script {
