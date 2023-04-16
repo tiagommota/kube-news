@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: tiagommota/kube-news:v1
+          image: tiagommota/kube-news:{{TAG}}
           ports:
           - containerPort: 8080
           env:

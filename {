@@ -1,0 +1,72 @@
+Script started on 2023-04-16 03:59:18+01:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="197" LINES="9"]
+
+
+
+
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
+[?2004l[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
+[?2004l[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
+[?2004l[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ 
+[?2004l[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kube [Kctl describe pod [K[K[K[K[K[K[K[K[K[K[K[K[Kget pod
+[?2004lNAME                       READY   STATUS    RESTARTS   AGE
+postgre-57cd746467-g4d5t   1/1     Running   0          73m
+web-b5cf776b-ptd8j         1/1     Running   0          73m
+web-b5cf776b-rqsq5         1/1     Running   0          73m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl desct[Kribe pode[K [7mweb-b5cf776b-ptd8j [27mweb-b5cf776b-ptd8j 
+[?2004lName:             web-b5cf776b-ptd8j
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             default-fnnsl/10.116.0.3
+Start Time:       Sun, 16 Apr 2023 02:46:34 +0100
+Labels:           app=web
+                  pod-template-hash=b5cf776b
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.167
+IPs:
+  IP:           10.244.0.167
+Controlled By:  ReplicaSet/web-b5cf776b
+Containers:
+  web:
+    Container ID:   containerd://9c0277fc3d3b67628ced4a068437a633fe602af86c8f491d3675500da2362203
+    Image:          tiagommota/kube-news:v1
+    Image ID:       docker.io/tiagommota/kube-news@sha256:c34258986d0c8f9ba255cc75355911d4cb78a1b736da3bad11a0316f613a860e
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 16 Apr 2023 02:46:35 +0100
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      DB_DATABASE:  kubenews
+      DB_USERNAME:  kubenews
+      DB_PASSWORD:  Pg#123
+      DB_HOST:      postgre
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lzxdh (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-lzxdh:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ubuntudesktop[00m:[01;34m~/cursodevops/aula2/kube-news[00m$ kubectl get services
+[?2004lNAME         TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)        AGE
+kubernetes   ClusterIP      10.245.0.1      <none>            443/TCP        8h
+postgre      ClusterIP      10.245.76.147   <none>            5432/TCP       74m
+web          LoadBalancer   10.245.193.83   143.244.203.183   80:32450/TCP   74m
+[?2004h]0;tmatos@ubuntudesktop: ~/cursodevops/aula2/kube-news[01;32mtmatos@ub
